@@ -21,12 +21,17 @@ Optional kann ein `id`-Feld als `AUTO_INCREMENT PRIMARY KEY` angelegt und im Map
 ## Installation
 
 ~~~bash
-git clone https://github.com/deinuser/csv-to-mariadb.git
-cd csv-to-mariadb
+git clone https://github.com/fksnet/csv_to_mariadb.git
+cd csv_to_mariadb
 python3 -m venv .venv
+# Linux/macOS:
 source .venv/bin/activate
+# Windows (CMD):
+# .venv\Scripts\activate
 pip install -r requirements.txt
 ~~~
+
+*(SSH-Alternative, falls du SSH-Keys/Deploy-Key nutzt: `git clone git@github.com:fksnet/csv_to_mariadb.git`)*
 
 ## Konfiguration
 
@@ -121,38 +126,23 @@ Beispielauszug (inkl. `id`-Feld):
 ]
 ~~~
 
-## .gitignore
+## Remote einrichten (falls du ein bestehendes lokales Projekt pushen willst)
 
-Diese Repo-Datei ignoriert u. a. `config.ini` und generierte `*.schema.json`.
-
-~~~gitignore
-# Bytecode
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Virtualenv
-.env
-.venv
-env/
-venv/
-ENV/
-
-# IDE / Editor
-.vscode/
-.idea/
-*.swp
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Projekt
-config.ini
-*.schema.json
+~~~bash
+git init -b main
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/fksnet/csv_to_mariadb.git
+git push -u origin main
 ~~~
+
+*(SSH-Variante: `git remote add origin git@github.com:fksnet/csv_to_mariadb.git`)*
 
 ## Lizenz
 
 MIT
+
+---
+
+**Hinweis / Credits**  
+Skript und Dokumentation erstellt mit Unterstützung von **ChatGPT 5**.
